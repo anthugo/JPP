@@ -14,6 +14,9 @@ Game::Game(QWidget *parent)
     player = new Player();
 
     setFixedSize(800,600);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
     scene->setSceneRect(0,0,800,600);
     setScene(scene);
 
@@ -23,12 +26,15 @@ Game::Game(QWidget *parent)
     player->setPos(width()/2,height()- player->rect().height());
     scene->addItem(player);
 
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    score = new Score();
+    scene->addItem(score);
+
+    health = new Health();
+    scene->addItem(health);
 
     QTimer *timer = new QTimer;
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
-    timer->start(100);
+    timer->start(2000);
 
     show();
 }

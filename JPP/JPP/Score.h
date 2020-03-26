@@ -9,6 +9,7 @@ public:
     int getScore();
 private:
     int score;
+    void refresh();
 };
 
 #endif // SCORE_H

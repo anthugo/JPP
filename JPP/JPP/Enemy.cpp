@@ -3,6 +3,9 @@
 #include <QGraphicsScene>
 #include <stdlib.h>
 #include <QDebug>
+#include <Game.h>
+
+extern Game *game;
 
 Enemy::Enemy()
 {
@@ -18,8 +21,19 @@ Enemy::Enemy()
 
 void Enemy::move()
 {
+    QList<QGraphicsItem*> colliding_items = collidingItems();
+    for (int i = 0,n = colliding_items.size();i < n;i++) {
+        if(typeid(*(colliding_items[i])) == typeid(Player)) {
+            game->health->decrease();
+            scene()->removeItem(this);
+            delete this;
+            return;
+        }
+    }
+
     setPos(x(),y()+5);
-    if (pos().y()+rect().height() > scene()->height()) {
+    if (pos().y() > scene()->height()) {
+        game->health->decrease();
         scene()->removeItem(this);
         this->deleteLater();
     }
