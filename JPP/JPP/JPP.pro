@@ -16,15 +16,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    MyRect.cpp \
-    main.cpp \
-    mainscene.cpp \
-    mainwidget.cpp
+    Bullet.cpp \
+    Enemy.cpp \
+    Game.cpp \
+    Player.cpp \
+    Score.cpp \
+    main.cpp
 
 HEADERS += \
-    MyRect.h \
-    mainscene.h \
-    mainwidget.h
+    Bullet.h \
+    Enemy.h \
+    Game.h \
+    Player.h \
+    Score.h
 
 FORMS += \
     mainwidget.ui
