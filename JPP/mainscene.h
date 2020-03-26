@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QFrame>
 
 class mainscene : public QWidget
 {

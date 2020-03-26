@@ -2,6 +2,9 @@
 #define MAINWIDGET_H
 
 #include <QWidget>
+#include <QFrame>
+#include <QPushButton>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWidget; }
@@ -17,5 +20,7 @@ public:
 
 private:
     Ui::MainWidget *ui;
+    QPushButton *button;
+    QLabel *label;
 };
 #endif // MAINWIDGET_H
