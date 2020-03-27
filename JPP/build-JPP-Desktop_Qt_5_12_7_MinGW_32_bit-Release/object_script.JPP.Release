@@ -5,6 +5,7 @@ release/Health.o
 release/Player.o
 release/Score.o
 release/main.o
+release/qrc_resources.o
 release/moc_Bullet.o
 release/moc_Enemy.o
 release/moc_Player.o

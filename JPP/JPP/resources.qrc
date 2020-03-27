@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>Resources/jdg_song.mp3</file>
+        <file>Resources/wololo.mp3</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>Resources/assassin.jpg</file>
+        <file>Resources/Dabchanka.png</file>
+        <file>Resources/skyrano.jpg</file>
+        <file>Resources/back.jpg</file>
+    </qresource>
+</RCC>

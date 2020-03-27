@@ -7,9 +7,10 @@
 
 extern Game *game;
 
-Enemy::Enemy()
+Enemy::Enemy(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
-    setRect(0,0,100,100);
+    setPixmap(QPixmap(":/images/Resources/Dabchanka.png"));
+
     int random_number = rand() % 700;
     setPos(random_number,0);
 

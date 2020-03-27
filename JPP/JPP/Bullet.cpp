@@ -7,9 +7,10 @@
 
 extern Game *game;
 
-Bullet::Bullet()
+Bullet::Bullet(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
-    setRect(0,0,10,50);
+    setPixmap(QPixmap(":/images/Resources/assassin.jpg").scaled(60,50));
+    setTransformOriginPoint(30,25);
 
     QTimer *timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
@@ -32,7 +33,8 @@ void Bullet::move()
     }
 
     setPos(x(),y()-10);
-    if (pos().y()+rect().height() < 0) {
+    setRotation(this->rotation()+20);
+    if (pos().y()+50 < 0) {
         scene()->removeItem(this);
         this->deleteLater();
     }
